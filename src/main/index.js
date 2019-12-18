@@ -28,19 +28,11 @@ if (process.env.NODE_ENV !== 'development') {
 
 const importURL = process.env.NODE_ENV === 'development'
 	? `http://localhost:9080#import`
-	: url.format({
-		pathname: path.join(__dirname, "index.html"),
-		protocol: 'file:',
-		slashes: true
-    });
+	: `file://${__dirname}/index.html#import`;
 
 const adminURL = process.env.NODE_ENV === 'development'
 	? `http://localhost:9080#admin`
-	: url.format({
-		pathname: path.join(__dirname, "index.html"),
-		protocol: 'file:',
-		slashes: true
-	});
+	: `file://${__dirname}/index.html#admin`;
 
 // const miningURL = process.env.NODE_ENV === 'development'
 // 	? `http://localhost:9080#mining`
